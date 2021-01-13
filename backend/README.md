@@ -390,6 +390,62 @@ Sample Response:
 
 ```
 
+Error Cases
+
+```
+Status: 404 NOT FOUND
+- Returned when an invalid URL is sent
+- Response returns a dictionary with the following keys
+  * error: a string indicating the http/https status in this case it will return "404"
+  * message: a string error message in this case it will return "Not found"
+  * success: a boolean indicating that the request has failed by returning flase in this case
+
+Sample Response:
+
+{
+    "error": 404,
+    "message": "Not found",
+    "success": false
+}
+
+```
+
+```
+Status: 422 Unprocessable Entity
+- Indicates that the server understands the content type of the request entity, and the syntax of the request entity is correct, but it was unable to process the contained instructions
+- Response returns a dictionary with the following keys
+  * error: a string indicating the http/https status in this case it will return "422"
+  * message: a string error message in this case it will return "unprocessable"
+  * success: a boolean indicating that the request has failed by returning flase in this case
+
+Sample Response:
+
+{
+    "error": 422,
+    "message": "unprocessable",
+    "success": false
+}
+
+```
+
+```
+Status: 400 Bad Request
+- Indicates that the server cannot or will not process the request due to something that is perceived to be a client error
+- Response returns a dictionary with the following keys
+  * error: a string indicating the http/https status in this case it will return "400"
+  * message: a string error message in this case it will return "Bad Request"
+  * success: a boolean indicating that the request has failed by returning flase in this case
+
+Sample Response:
+
+{
+    "error": 422,
+    "message": "Bad Request",
+    "success": false
+}
+
+```
+
 ## Testing
 
 To run the tests, run
